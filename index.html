@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>香港热门夏校精选项目总汇总</title>
+<style>
+  :root{
+    --card:#ffffff;
+    --text:#21322c;
+    --muted:#63756d;
+    --line:#dde7e1;
+    --brand:#2e6e57;
+    --brand-soft:#edf6f1;
+    --brand-deep:#244f40;
+    --gold:#9b7a2c;
+    --shadow:0 10px 28px rgba(28,48,40,.08);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+    color:var(--text);
+    background:linear-gradient(180deg,#f7faf8 0%,#eef3f0 100%);
+  }
+  .wrap{max-width:1400px;margin:0 auto;padding:30px 22px 60px}
+  .hero{
+    background:linear-gradient(135deg,#2f6f57 0%,#4e9076 100%);
+    border-radius:26px;
+    padding:34px 34px 28px;
+    color:#fff;
+    box-shadow:var(--shadow);
+  }
+  .hero h1{margin:0 0 12px;font-size:36px;line-height:1.18}
+  .hero p{margin:0;font-size:15px;line-height:1.9;color:rgba(255,255,255,.94)}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .hero .meta span{
+    display:inline-block;padding:8px 12px;border-radius:999px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);
+    font-size:12px
+  }
+  .value-grid{
+    margin-top:20px;display:grid;grid-template-columns:1.2fr 1fr;gap:16px
+  }
+  .value-card,.fee-card{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)
+  }
+  .value-card h2,.fee-card h2{margin:0 0 10px;font-size:22px;color:var(--brand)}
+  .value-card p,.fee-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.9}
+  .value-list{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .mini{background:#f9fcfa;border:1px solid var(--line);border-radius:16px;padding:14px}
+  .mini h3{margin:0 0 6px;font-size:15px;color:var(--brand-deep)}
+  .mini p{margin:0;font-size:13px;line-height:1.8;color:var(--muted)}
+  .fee-box{
+    margin-top:14px;background:#fffaf1;border:1px solid #efe1b5;border-radius:16px;padding:16px
+  }
+  .fee-big{font-size:30px;font-weight:800;color:var(--gold);margin-bottom:6px}
+  .panel{
+    margin-top:20px;background:var(--card);border:1px solid var(--line);
+    border-radius:20px;padding:18px;box-shadow:var(--shadow)
+  }
+  .controls{
+    display:grid;grid-template-columns:1.6fr repeat(4,minmax(120px,.65fr));gap:12px
+  }
+  input,select{
+    width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;
+    font-size:14px;background:#fff;color:var(--text);outline:none
+  }
+  .helper{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .chip{
+    display:inline-block;padding:6px 10px;border-radius:999px;
+    background:var(--brand-soft);border:1px solid #d6e6dd;color:var(--brand);font-size:12px
+  }
+  .section-title{
+    display:flex;justify-content:space-between;align-items:end;margin:26px 0 12px
+  }
+  .section-title h2{margin:0;font-size:24px}
+  .section-title p{margin:0;color:var(--muted);font-size:13px}
+  .table-card{
+    background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow)
+  }
+  .table-wrap{overflow:auto}
+  table{width:100%;min-width:1560px;border-collapse:separate;border-spacing:0;background:#fff}
+  thead th{
+    position:sticky;top:0;background:#f2f8f4;color:#284b3c;padding:14px 12px;font-size:13px;font-weight:700;text-align:left;
+    border-bottom:1px solid var(--line);white-space:nowrap
+  }
+  tbody td{
+    padding:14px 12px;border-bottom:1px solid #edf2ee;vertical-align:top;font-size:13px;line-height:1.75
+  }
+  tbody tr:hover{background:#fbfdfc}
+  .school{font-weight:700;color:var(--brand);font-size:14px}
+  .sub{font-size:12px;color:var(--muted);margin-top:3px}
+  .tag{
+    display:inline-block;margin:2px 6px 2px 0;padding:4px 8px;border-radius:999px;
+    background:#eef6f1;color:var(--brand);border:1px solid #dcebe2;font-size:11px
+  }
+  .price{font-weight:700;color:#7d5e1b}
+  .recommend{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)
+  }
+  .card h3{margin:0 0 8px;font-size:18px;color:var(--brand)}
+  .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}
+  .card ul{margin:10px 0 0 18px;padding:0}
+  .card li{margin:6px 0;font-size:13px;line-height:1.7}
+  .note{
+    margin-top:18px;padding:14px 16px;border-radius:16px;background:#fffaf1;border:1px solid #efe1b5;
+    color:#6e5d2e;font-size:13px;line-height:1.8
+  }
+  footer{margin-top:24px;color:var(--muted);font-size:12px;line-height:1.8}
+  .hide{display:none}
+  @media (max-width:1100px){
+    .controls{grid-template-columns:1fr 1fr}
+    .value-grid{grid-template-columns:1fr}
+    .value-list{grid-template-columns:1fr}
+    .recommend{grid-template-columns:1fr}
+    .hero h1{font-size:30px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <h1>香港热门夏校精选项目总汇总</h1>
+    <p>本页整合了 Harrow Hong Kong、Malvern College Hong Kong、ESF Explore 的热门夏校项目，方便家长直接按年龄、时间、价格、课程方向、上课时段快速筛选与比较。整体覆盖低龄启蒙、小学综合拓展以及初中阶段能力提升。</p>
+    <div class="meta">
+      <span>适用：幼儿园 / 小学 / 初中</span>
+      <span>重点：筛选后的优质项目汇总</span>
+      <span>支持：关键词搜索与多条件筛选</span>
+    </div>
+  </section>
+
+  <section class="value-grid">
+    <div class="value-card">
+      <h2>我们的服务价值</h2>
+      <p>不是简单代报名，而是先根据孩子的年龄、英文基础、兴趣方向、暑期安排与家长期待，帮助家庭从众多项目中筛选出更匹配的夏校，再协助完成申请与后续跟进。</p>
+      <div class="value-list">
+        <div class="mini">
+          <h3>筛选更省时间</h3>
+          <p>结合年龄、课程方向、营型与时间安排，先做初筛，避免家长自己逐个项目比对。</p>
+        </div>
+        <div class="mini">
+          <h3>匹配更有针对性</h3>
+          <p>根据英语、STEM、体育、艺术或综合成长目标，推荐更合适的项目方向。</p>
+        </div>
+        <div class="mini">
+          <h3>申请流程更顺畅</h3>
+          <p>协助梳理报名信息、递交申请、确认名额与后续沟通，减少遗漏和反复确认。</p>
+        </div>
+        <div class="mini">
+          <h3>适合忙碌家庭</h3>
+          <p>尤其适合需要快速选定合适夏校、又不想自己反复查资料和比较的家庭。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fee-card">
+      <h2>代为申请服务</h2>
+      <p>针对已筛选好的夏校项目，我们可提供代为申请与跟进服务，帮助家长完成从项目确认到实际递交的整个流程。</p>
+      <div class="fee-box">
+        <div class="fee-big">服务费：学费的 20%</div>
+        <p>适用于已确认的夏校项目申请服务。具体项目是否开放、名额情况及最终报名安排，以实际申请时为准。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="controls">
+      <input id="searchInput" type="text" placeholder="搜索关键词：学校、年龄、英语、STEM、足球、面试、辩论、2.5岁、Ma On Shan..." />
+      <select id="schoolFilter">
+        <option value="">全部学校</option>
+        <option value="Harrow Hong Kong">Harrow Hong Kong</option>
+        <option value="Malvern College Hong Kong">Malvern College Hong Kong</option>
+        <option value="ESF Explore">ESF Explore</option>
+      </select>
+      <select id="ageFilter">
+        <option value="">全部年龄段</option>
+        <option value="幼儿">幼儿</option>
+        <option value="小学">小学</option>
+        <option value="初中">初中</option>
+      </select>
+      <select id="typeFilter">
+        <option value="">全部营型</option>
+        <option value="半日营">半日营</option>
+        <option value="日营">日营</option>
+        <option value="全日营">全日营</option>
+        <option value="住宿营">住宿营</option>
+        <option value="专题营">专题营</option>
+      </select>
+      <select id="focusFilter">
+        <option value="">全部方向</option>
+        <option value="英语">英语</option>
+        <option value="STEM">STEM</option>
+        <option value="体育">体育</option>
+        <option value="艺术">艺术</option>
+        <option value="综合">综合</option>
+      </select>
+    </div>
+    <div class="helper">
+      <span class="chip">可搜：英语 / STEM / 足球 / 辩论 / 面试 / 低龄 / 全日营</span>
+      <span class="chip">先看年龄，再看营型，再比课程方向</span>
+      <span class="chip">适合直接发家长做初筛</span>
+    </div>
+  </section>
+
+  <div class="section-title">
+    <h2>项目总表</h2>
+    <p>同一学校内会同时有半日营、日营、全日营或住宿项目，建议按孩子年龄和目标一起看。</p>
+  </div>
+
+  <section class="table-card">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>学校</th>
+            <th>项目 / 校点</th>
+            <th>年龄</th>
+            <th>时间</th>
+            <th>价格</th>
+            <th>课程内容</th>
+            <th>上课时段</th>
+            <th>营型</th>
+            <th>适合人群</th>
+            <th>备注</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr data-school="Harrow Hong Kong" data-agegroup="小学 初中" data-type="日营 住宿营" data-focus="英语" data-keywords="harrow english immersion 英语沉浸 日营 住宿营 8-16 写作 演讲">
+            <td><div class="school">Harrow Hong Kong</div><div class="sub">精品主题项目</div></td>
+            <td><strong>English Immersion Camp</strong><br>Hong Kong</td>
+            <td>8–16岁</td>
+            <td>住宿：29 Jun–4 Jul / 6–11 Jul / 13–18 Jul<br>日营：29 Jun–3 Jul / 6–10 Jul / 13–17 Jul / 20–24 Jul</td>
+            <td><span class="price">日营约 HK$9,980 起</span><br><span class="price">住宿约 HK$14,500</span></td>
+            <td><span class="tag">英语</span><span class="tag">表达</span><span class="tag">阅读写作</span><span class="tag">演讲展示</span><br>适合做英文浸润、提升表达自信和输出能力。</td>
+            <td>日营 / 住宿营</td>
+            <td>日营 / 住宿营</td>
+            <td>希望暑期集中提升英语环境与表达能力的学生</td>
+            <td>英语方向的代表项目，成熟度较高。</td>
+          </tr>
+
+          <tr data-school="Harrow Hong Kong" data-agegroup="小学" data-type="日营" data-focus="STEM" data-keywords="harrow space explorers 太空探索 stem 科学 6-8">
+            <td><div class="school">Harrow Hong Kong</div><div class="sub">精品主题项目</div></td>
+            <td><strong>Space Explorers</strong><br>Hong Kong</td>
+            <td>6–8岁</td>
+            <td>29 Jun–3 Jul / 6–10 Jul / 13–17 Jul / 20–24 Jul</td>
+            <td><span class="price">HK$9,980</span></td>
+            <td><span class="tag">STEM</span><span class="tag">科学探索</span><span class="tag">太空主题</span><br>通过主题活动引导低龄学生做科学体验与探究。</td>
+            <td><strong>9:00AM–4:00PM</strong></td>
+            <td>日营</td>
+            <td>喜欢科学、探索、主题式学习的低龄孩子</td>
+            <td>低龄 STEM 代表课程。</td>
+          </tr>
+
+          <tr data-school="Harrow Hong Kong" data-agegroup="小学 初中" data-type="半日营 日营" data-focus="体育" data-keywords="harrow football premier league 足球 4-7 8-11 12-16 体育">
+            <td><div class="school">Harrow Hong Kong</div><div class="sub">精品主题项目</div></td>
+            <td><strong>Premier League Scout & Development Programme</strong><br>Hong Kong</td>
+            <td>4–7岁；8–11岁；12–16岁</td>
+            <td>13–17 Jul / 20–24 Jul</td>
+            <td><span class="price">4–7岁 HK$6,980</span><br><span class="price">8–11岁 / 12–16岁 HK$8,980</span></td>
+            <td><span class="tag">体育</span><span class="tag">足球</span><span class="tag">竞技发展</span><br>结合训练、技巧与球探视角，偏体育专项路线。</td>
+            <td>按年龄和项目安排</td>
+            <td>半日营 / 日营</td>
+            <td>足球兴趣强、运动投入度较高的学生</td>
+            <td>体育方向辨识度很高。</td>
+          </tr>
+
+          <tr data-school="Harrow Hong Kong" data-agegroup="小学" data-type="日营 专题营" data-focus="英语" data-keywords="harrow cambridge english a2 key 面试 camp 9-11 英语">
+            <td><div class="school">Harrow Hong Kong</div><div class="sub">精品主题项目</div></td>
+            <td><strong>Cambridge English: A2 Key Preparation & Secondary Interview Camp</strong><br>Hong Kong</td>
+            <td>9–11岁</td>
+            <td>香港站夏校周次内安排</td>
+            <td><span class="price">HK$9,980</span></td>
+            <td><span class="tag">英语</span><span class="tag">剑桥备考</span><span class="tag">面试准备</span><br>适合希望兼顾英语能力提升与中学面试表达训练的学生。</td>
+            <td>日营</td>
+            <td>专题营</td>
+            <td>目标偏英语考试或面试准备的家庭</td>
+            <td>实用性较强，比较受家长关注。</td>
+          </tr>
+
+          <tr data-school="Harrow Hong Kong" data-agegroup="小学 初中" data-type="日营 住宿营" data-focus="综合" data-keywords="harrow coastal voyage 户外 水上 8-16">
+            <td><div class="school">Harrow Hong Kong</div><div class="sub">精品主题项目</div></td>
+            <td><strong>Hong Kong Coastal Voyage</strong><br>Hong Kong</td>
+            <td>8–16岁</td>
+            <td>香港站夏校周次内安排</td>
+            <td><span class="price">约 HK$9,980 起</span><br><span class="price">住宿项目可更高</span></td>
+            <td><span class="tag">户外探索</span><span class="tag">水上活动</span><span class="tag">领导力</span><br>偏体验式成长路线，项目感强。</td>
+            <td>日营 / 住宿营</td>
+            <td>日营 / 住宿营</td>
+            <td>希望孩子多做户外挑战与团队协作体验的家庭</td>
+            <td>适合不想只做学术型夏校的学生。</td>
+          </tr>
+
+          <tr data-school="Malvern College Hong Kong" data-agegroup="幼儿" data-type="半日营" data-focus="综合" data-keywords="malvern island west preschool sai ying pun 2.5-4 创意艺术 科学 体育 情绪">
+            <td><div class="school">Malvern College Hong Kong</div><div class="sub">Pre-school 幼儿项目</div></td>
+            <td><strong>Pre-school (Island West)</strong><br>Sai Ying Pun 西营盘</td>
+            <td>2.5–4岁</td>
+            <td>22–26 Jun / 29 Jun–3 Jul / 6–10 Jul / 13–17 Jul / 20–24 Jul</td>
+            <td><span class="price">HK$1,966 / 周起</span></td>
+            <td><span class="tag">综合</span><span class="tag">Creative Arts</span><span class="tag">Science</span><span class="tag">PE</span><span class="tag">Emotional Wellbeing</span><br>Playtime / Multi-Activity 模式，重在启蒙、社交与课堂适应。</td>
+            <td><strong>9:00AM–12:00PM</strong></td>
+            <td>半日营</td>
+            <td>低龄启蒙、第一次尝试集体课程的孩子</td>
+            <td>2.5岁可参加；节奏较轻；低龄友好。</td>
+          </tr>
+
+          <tr data-school="Malvern College Hong Kong" data-agegroup="幼儿" data-type="半日营" data-focus="综合" data-keywords="malvern coronation circle yau ma tei 2.5-4 创意艺术 科学 体育 情绪">
+            <td><div class="school">Malvern College Hong Kong</div><div class="sub">Pre-school 幼儿项目</div></td>
+            <td><strong>Pre-school (Coronation Circle)</strong><br>Yau Ma Tei 油麻地</td>
+            <td>2.5–4岁</td>
+            <td>22–26 Jun / 29 Jun–3 Jul / 6–10 Jul / 13–17 Jul / 20–24 Jul</td>
+            <td><span class="price">HK$1,966 / 周起</span></td>
+            <td><span class="tag">综合</span><span class="tag">Creative Arts</span><span class="tag">Science</span><span class="tag">PE</span><span class="tag">Emotional Wellbeing</span><br>课程结构与 Island West 类似，适合九龙区低龄家庭。</td>
+            <td><strong>9:00AM–12:00PM</strong></td>
+            <td>半日营</td>
+            <td>希望孩子在低压力环境中做启蒙体验的家庭</td>
+            <td>低龄综合营，实用度高，接受度通常较好。</td>
+          </tr>
+
+          <tr data-school="Malvern College Hong Kong" data-agegroup="小学" data-type="日营" data-focus="综合" data-keywords="malvern tai po 5-12 magic active multi-activity 综合活动">
+            <td><div class="school">Malvern College Hong Kong</div><div class="sub">Main Campus 小学项目</div></td>
+            <td><strong>Malvern College (Tai Po)</strong><br>Tai Po 大埔</td>
+            <td>5–12岁</td>
+            <td>22–26 Jun / 29 Jun–3 Jul / 6–10 Jul / 13–17 Jul / 20–24 Jul</td>
+            <td>当前已掌握资料中未见明确统一夏校价格</td>
+            <td><span class="tag">综合</span><span class="tag">Magic 5–7</span><span class="tag">Active 8–12</span><br>按年龄分组的 Multi-Activity Camp，偏综合活动、非单一学科路线。</td>
+            <td>当前已掌握资料中未见明确统一时段</td>
+            <td>日营</td>
+            <td>希望孩子参加综合活动、而非单科强化的家庭</td>
+            <td>整体气质更偏成长型与体验型。</td>
+          </tr>
+
+          <tr data-school="ESF Explore" data-agegroup="幼儿" data-type="半日营" data-focus="综合 英语" data-keywords="esf playgroup 13 months 2 years 3 years 半日营 亲子 低龄">
+            <td><div class="school">ESF Explore</div><div class="sub">低龄启蒙项目</div></td>
+            <td><strong>Playgroup</strong><br>多个 ESF 项目点</td>
+            <td>13个月起</td>
+            <td>2026 夏季周次内分周开放</td>
+            <td><span class="price">2节 HK$1240</span><br><span class="price">4节 HK$2480</span><br><span class="price">5节 HK$3100</span></td>
+            <td><span class="tag">低龄启蒙</span><span class="tag">亲子过渡</span><span class="tag">课堂适应</span><br>适合非常低龄孩子先接触课堂节奏、英文环境和集体互动。</td>
+            <td>常见为 <strong>9:00AM–11:00AM</strong></td>
+            <td>半日营</td>
+            <td>希望孩子先适应环境、不想一开始上太长时段课程的家庭</td>
+            <td>ESF 低龄入口项目之一。</td>
+          </tr>
+
+          <tr data-school="ESF Explore" data-agegroup="幼儿 小学" data-type="半日营" data-focus="英语 综合" data-keywords="esf eager explorers phonics kindergarten preparation little explorers">
+            <td><div class="school">ESF Explore</div><div class="sub">幼儿 / 低小半日项目</div></td>
+            <td><strong>Kindergarten & Lower Primary Half Day Programmes</strong><br>多个 ESF 项目点</td>
+            <td>约 3–8岁</td>
+            <td><strong>29 Jun–19 Aug 2026</strong>（Week 1–8）</td>
+            <td>按课程、安排和天数分别收费</td>
+            <td><span class="tag">英语</span><span class="tag">Phonics</span><span class="tag">Kindergarten Preparation</span><span class="tag">Little Explorers</span><span class="tag">Drama</span><br>适合语言启蒙、幼小衔接和低龄兴趣拓展。</td>
+            <td>常见为 <strong>9:00AM–12:00PM</strong></td>
+            <td>半日营</td>
+            <td>想先做英语环境浸润或轻量型暑期安排的家庭</td>
+            <td>选择灵活，是 ESF 的优势之一。</td>
+          </tr>
+
+          <tr data-school="ESF Explore" data-agegroup="小学" data-type="半日营" data-focus="英语 STEM 艺术 体育 综合" data-keywords="esf creative writing science coding drama spanish french sports 6-11">
+            <td><div class="school">ESF Explore</div><div class="sub">小学半日项目</div></td>
+            <td><strong>Primary Half Day Camp</strong><br>多个 ESF 项目点</td>
+            <td>约 6–11岁</td>
+            <td><strong>29 Jun–19 Aug 2026</strong>（Week 1–8）</td>
+            <td>按课程安排收费</td>
+            <td><span class="tag">Creative Writing</span><span class="tag">Science</span><span class="tag">Coding</span><span class="tag">Drama</span><span class="tag">French</span><span class="tag">Spanish</span><span class="tag">Sports</span><br>项目非常丰富，适合按兴趣和能力方向精准选课。</td>
+            <td>常见为 <strong>9:00AM–12:00PM</strong></td>
+            <td>半日营</td>
+            <td>希望按单项能力拓展、灵活安排暑期时间的家庭</td>
+            <td>课程面最广，适合细分需求。</td>
+          </tr>
+
+          <tr data-school="ESF Explore" data-agegroup="小学" data-type="全日营" data-focus="综合 英语 体育 STEM" data-keywords="esf full day island school kowloon junior renaissance language drama multi-sports stem">
+            <td><div class="school">ESF Explore</div><div class="sub">小学全日项目</div></td>
+            <td><strong>Full Day Camp</strong><br>Island School / Kowloon Junior School / Renaissance College / Language & Learning Centre</td>
+            <td>5–11岁</td>
+            <td><strong>29 Jun–7 Aug 2026</strong>（主要 Week 1–6）</td>
+            <td><span class="price">4天 HK$7,552</span><br><span class="price">5天 HK$9,440</span></td>
+            <td><span class="tag">全日营</span><span class="tag">Language</span><span class="tag">Drama</span><span class="tag">STEM</span><span class="tag">Multi-Sports</span><br>通常为上午学术 / 语言，下午运动或 STEM 的完整日程组合。</td>
+            <td><strong>9:00AM–12:00PM</strong> + 午餐 + <strong>1:00PM–4:00PM</strong><br>部分线路下午至 <strong>4:15PM</strong></td>
+            <td>全日营</td>
+            <td>希望孩子白天有完整安排、学习和活动兼顾的家庭</td>
+            <td>托管友好度和系统性都较强。</td>
+          </tr>
+
+          <tr data-school="ESF Explore" data-agegroup="初中" data-type="全日营 专题营" data-focus="英语 综合" data-keywords="esf summer academy debate public speaking financial literacy career entrepreneurship 12-14">
+            <td><div class="school">ESF Explore</div><div class="sub">中学生专项项目</div></td>
+            <td><strong>Summer Academy</strong><br>Island School / King George V School / Renaissance College</td>
+            <td>12–14岁</td>
+            <td><strong>22 Jun–7 Aug 2026</strong>（Week 0–6）</td>
+            <td>单项组合收费；已见示例：<span class="price">4天 HK$8,616</span></td>
+            <td><span class="tag">Debate</span><span class="tag">Public Speaking</span><span class="tag">Financial Literacy</span><span class="tag">Media</span><span class="tag">Career Skills</span><span class="tag">Entrepreneurship</span><br>更偏表达、思辨、财经、未来规划等中学生能力提升。</td>
+            <td><strong>9:00AM–12:00PM</strong>；午餐；<strong>1:00PM–4:00PM</strong></td>
+            <td>全日营 / 专题营</td>
+            <td>不想上过于低龄化课程、希望内容更成熟的初中学生</td>
+            <td>是 ESF 里很适合初中段的路线之一。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="section-title">
+    <h2>快速选课建议</h2>
+    <p>如果家长没有明确方向，可以先按下面的逻辑推荐。</p>
+  </div>
+
+  <section class="recommend">
+    <div class="card">
+      <h3>低龄启蒙：2.5–5岁</h3>
+      <p>如果重点是课堂适应、英文环境、社交和兴趣启蒙，优先看低龄综合项目。</p>
+      <ul>
+        <li><strong>Malvern Pre-school</strong>：节奏轻、综合体验感强，适合第一次上夏校的孩子</li>
+        <li><strong>ESF Playgroup / Kindergarten Half Day</strong>：时间灵活，适合低龄启蒙和轻量安排</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>小学阶段：5–11岁</h3>
+      <p>这个阶段选择最多，可以按“英语提升、综合拓展、托管需求、兴趣方向”来分。</p>
+      <ul>
+        <li><strong>Harrow</strong>：适合主题型、项目感强的家庭</li>
+        <li><strong>ESF Full Day</strong>：适合想要完整白天安排的家庭</li>
+        <li><strong>ESF Half Day</strong>：适合按单项能力灵活选课</li>
+        <li><strong>Malvern Tai Po</strong>：适合综合活动型路线</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>初中阶段：12岁以上</h3>
+      <p>建议优先看更成熟的课程内容，避免项目过于低龄化。</p>
+      <ul>
+        <li><strong>ESF Summer Academy</strong>：辩论、表达、财经、职业探索更适合初中学生</li>
+        <li><strong>Harrow English / Coastal / Sports</strong>：适合英语、户外体验或体育方向明确的学生</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="note">
+    <strong>温馨提示：</strong>同一学校在不同周次、不同安排下的开班情况可能会有差异；部分项目价格也会因天数、组合方式或营型不同而变化。建议家长先通过这份总表做初步筛选，再进一步锁定具体项目。
+  </div>
+
+  <footer>
+    适合场景：家长快速浏览、项目初筛、按需求比较。<br>
+    推荐搜索方式：先搜年龄或关键词，再看学校和营型；例如“2.5–4岁”“英语”“足球”“全日营”“辩论”“STEM”。
+  </footer>
+</div>
+
+<script>
+const rows = Array.from(document.querySelectorAll('#tbody tr'));
+const searchInput = document.getElementById('searchInput');
+const schoolFilter = document.getElementById('schoolFilter');
+const ageFilter = document.getElementById('ageFilter');
+const typeFilter = document.getElementById('typeFilter');
+const focusFilter = document.getElementById('focusFilter');
+
+function applyFilters(){
+  const q = searchInput.value.trim().toLowerCase();
+  const school = schoolFilter.value;
+  const age = ageFilter.value;
+  const type = typeFilter.value;
+  const focus = focusFilter.value;
+
+  rows.forEach(row => {
+    const text = row.innerText.toLowerCase();
+    const schoolData = row.dataset.school || '';
+    const ageData = row.dataset.agegroup || '';
+    const typeData = row.dataset.type || '';
+    const focusData = row.dataset.focus || '';
+    const keywords = (row.dataset.keywords || '').toLowerCase();
+
+    const matchQ = !q || text.includes(q) || keywords.includes(q);
+    const matchSchool = !school || schoolData === school;
+    const matchAge = !age || ageData.includes(age);
+    const matchType = !type || typeData.includes(type);
+    const matchFocus = !focus || focusData.includes(focus);
+
+    const show = matchQ && matchSchool && matchAge && matchType && matchFocus;
+    row.classList.toggle('hide', !show);
+  });
+}
+
+[searchInput, schoolFilter, ageFilter, typeFilter, focusFilter].forEach(el => {
+  el.addEventListener('input', applyFilters);
+  el.addEventListener('change', applyFilters);
+});
+applyFilters();
+</script>
+</body>
+</html>
